@@ -1,0 +1,20 @@
+ldi r1 0 ;x pos
+ldi r2 0 ;y pos
+ldi r3 1 ;increment
+ldi r4 128 ;screen width and height
+.loop
+io r1 1 write
+io r2 2 write
+io r3 3 write
+io r3 4 write
+add r1 r3 r1
+sub r1 r4 r7
+brz resetX
+.return1
+sub r2 r4 r7
+brnz loop
+halt
+.resetX
+xor r1 r1 r1
+add r2 r3 r2
+jump return1

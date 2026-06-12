@@ -1,0 +1,218 @@
+
+Define screenWidth 64
+Define screenHeight 48
+
+ldi r1 15 ; Bird X position
+ldi r2 24 ; Bird Y position
+
+ldi r3 60 ; Initial Pipe X
+store r3 100 ; Store in ram
+
+ldi r3 13 ; Starting Random number
+store r3 101
+
+ldi r3 14 ; Initial hole height
+store r3 102
+
+ldi r3 28 ; Initial hole bottom
+store r3 103
+
+.game_loop
+
+;random number generator
+load r3 101
+io r4 5 read
+add r3 r4 r3
+ldi r4 7
+mlt r3 r4 r3 r4
+ldi r3 11
+add r4 r3 r3
+store r3 101
+
+
+;remove previous pos
+xor r7 r7 r7
+io r7 3 write
+
+io r1 1 write
+io r2 2 write
+
+ldi r7 1
+add r1 r7 r4
+io r4 1 write
+io r2 2 write
+
+ldi r7 1
+add r2 r7 r4
+io r1 1 write
+io r4 2 write
+
+ldi r7 1
+add r1 r7 r4
+add r2 r7 r5
+io r4 1 write
+io r5 2 write
+
+
+;remove old pipe pos
+xor r7 r7 r7
+io r7 3 write
+
+load r3 100
+xor r6 r6 r6
+
+.clear_pipe_loop
+io r3 1 write
+io r6 2 write
+ldi r7 1
+add r6 r7 r6
+ldi r7 48
+sub r6 r7 r0
+brn clear_pipe_loop
+
+io r7 5 read
+sub r0 r7 r0
+brz apply_gravity
+
+ldi r7 4
+sub r2 r7 r2
+brn hit_top
+jump check_bottom
+
+.hit_top
+xor r2 r2 r2
+jump check_bottom
+
+.apply_gravity
+ldi r7 1
+add r2 r7 r2
+
+.check_bottom
+ldi r7 46
+sub r2 r7 r0
+brn bird_physics
+
+halt
+
+.bird_physics
+load r3 100
+ldi r4 2
+sub r3 r4 r3
+brn reset_pipe
+store r3 100
+jump pipe_physics
+
+.reset_pipe
+ldi r3 63
+store r3 100
+
+load r4 101
+ldi r5 31
+.mod_loop
+sub r4 r5 r4
+brnn mod_loop
+ldi r5 31
+add r4 r5 r4
+
+ldi r5 4
+add r4 r5 r4
+store r4 102
+
+ldi r5 14
+add r4 r5 r4
+store r4 103
+
+.pipe_physics
+
+;collisions
+load r3 100
+
+ldi r7 14
+sub r3 r7 r0
+brz check_pipe_collision
+ldi r7 15
+sub r3 r7 r0
+brz check_pipe_collision
+ldi r7 16
+sub r3 r7 r0
+brz check_pipe_collision
+jump collision
+
+.check_pipe_collision
+load r4 102
+sub r2 r4 r0
+brn game_over
+
+load r5 103
+ldi r7 1
+add r2 r7 r4
+sub r4 r5 r0
+brnn game_over
+jump collision
+
+.game_over
+halt
+
+.collision
+
+;draw pipes
+ldi r7 2
+io r7 3 write
+
+load r3 100
+load r4 102
+load r5 103
+
+xor r6 r6 r6
+
+.draw_pipe_loop
+sub r6 r4 r0
+brn draw_pixel
+
+sub r6 r5 r0
+brn skip_pixel
+
+.draw_pixel
+io r3 1 write ; X
+io r6 2 write ; Y
+
+.skip_pixel
+ldi r7 1
+add r6 r7 r6
+ldi r7 48
+sub r6 r7 r0
+brn draw_pipe_loop
+
+ldi r7 1
+io r7 3 write
+
+io r1 1 write
+io r2 2 write
+
+ldi r7 1
+add r1 r7 r4
+io r4 1 write
+io r2 2 write
+
+ldi r7 1
+add r2 r7 r4
+io r1 1 write
+io r4 2 write
+ldi r7 1
+add r1 r7 r4
+add r2 r7 r5
+io r4 1 write
+io r5 2 write
+
+
+ldi r7 1
+io r7 4 write
+
+;control speed here
+ldi r6 1000
+.delay_loop
+ldi r7 1
+sub r6 r7 r6
+brnz delay_loop
+
+jump game_loop

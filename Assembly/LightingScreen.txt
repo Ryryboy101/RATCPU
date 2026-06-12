@@ -1,0 +1,57 @@
+;does not work
+;IO ports
+;1 : xPos
+;2 : yPos
+;3 : red out
+;4 : green out
+;5 : blue out
+;6 : push buffer
+;7 : keyboard input
+;8 : halt
+;9 : colorLen in
+
+;r1 : x position
+;r2 : y position
+;r3 : section length
+;r4 : section color
+;r5 : screen width
+;r6 : screen height
+;r7 : temp / increment step
+
+Define screenWidth 64
+Define screenHeight 48
+
+.main
+clr r1
+clr r2
+ldi r5 screenWidth
+ldi r6 screenHeight
+ldi r7 1
+.loop1
+
+.loop2
+
+io r1 1 write
+io r2 2 write
+
+io r4 3 write
+
+
+; Move to next pixel
+add r1 r7 r1
+cmp r1 r5
+brn loop2
+
+clr r1
+add r2 r7 r2
+cmp r2 r6
+brn loop1
+
+ldi r7 1
+add r4 r7 r4
+io r7 6 write
+
+clr r1
+clr r2
+jump loop1
+halt
