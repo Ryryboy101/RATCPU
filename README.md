@@ -1,6 +1,16 @@
 The RATCPU (Redstone Automated Turing Complete Processing Unit) is an 8 bit computer that I designed for fun. 
+
 It was originally planned for a Minecraft CPU, hence the Redstone part. Due to me being unable to run the CPU as its full speed because of its size, I shifted to running a simulation of what it would be like.
 The final result is a simulation I wrote in java for my APCSA final.
+
+## **Language**
+
+| Component | Specification |
+| :--- | :--- |
+| **Word Size** | 8-bit |
+| **Simulation Environment** | Java |
+| **Software Used** | Assember & simulation I wrote |
+| **Instruction Set** | <img width="580" height="354" alt="image" src="https://github.com/user-attachments/assets/cf082016-5c65-416d-9f91-5fd52e613139" /> |
 
 
 ## **Favorite Program: Flappy Bird**
