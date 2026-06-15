@@ -31,4 +31,4 @@ Currently trying to learn SystemVerilog to convert this into real CPU
 | Topic | Credit |  
 | :--- | :--- |  
 | OPENGL Setup | Dev Genie Academy OpenGL tutorial : https://www.youtube.com/watch?v=XfjmLP_PSsQ&list=PL4QbKfRYvHvSJSVgHawYIvcIA0CcgnMzw |
-| Learning | ORE Discord Server |
+| Learning | ORE Discord Server : http://openredstone.org/discord |
