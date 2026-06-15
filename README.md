@@ -25,3 +25,5 @@ And the bird falls at a constant rate!
 The code used to write the game can be found in the Assembly folder.          
 
 Currently trying to learn systemVerilog to convert this into real CPU
+
+**NOTE : THIS HAS NOTHING TO DO WITH CAL POLY'S RATCPU**
