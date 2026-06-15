@@ -9,7 +9,7 @@ The final result is a simulation I wrote in java for my APCSA final.
 | **Word Size** | 8-bit |
 | **Simulation Environment** | Java |
 | **Software Used** | Assember & simulation I wrote |
-| **Instruction Set** | <img width="580" height="354" alt="image" src="https://github.com/user-attachments/assets/cf082016-5c65-416d-9f91-5fd52e613139" /> |
+| **Instruction Set** | <img width="576" height="352" alt="image" src="https://github.com/user-attachments/assets/d142123a-f899-401f-85c0-6e2e3eff97d3" /> |
 
 
 ## **Favorite Program: Flappy Bird**
