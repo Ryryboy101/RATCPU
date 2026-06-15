@@ -30,5 +30,5 @@ Currently trying to learn SystemVerilog to convert this into real CPU
 ## Credits & Acknowledgments
 | Topic | Credit |  
 | :--- | :--- |  
-| OPENGL Setup | https://www.youtube.com/watch?v=XfjmLP_PSsQ&list=PL4QbKfRYvHvSJSVgHawYIvcIA0CcgnMzw |
+| OPENGL Setup | Dev Genie Academy OpenGL tutorial : https://www.youtube.com/watch?v=XfjmLP_PSsQ&list=PL4QbKfRYvHvSJSVgHawYIvcIA0CcgnMzw |
 | Learning | ORE Discord Server |
