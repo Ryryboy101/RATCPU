@@ -3,8 +3,7 @@ The RATCPU (Redstone Automated Turing Complete Processing Unit) is an 8 bit comp
 It was originally planned for a Minecraft CPU, hence the Redstone part. Due to me being unable to run the CPU as its full speed because of its size, I shifted to running a simulation of what it would be like.
 The final result is a simulation I wrote in java for my APCSA final.
 
-## **Language**
-
+## Architecture & Specifications
 | Component | Specification |
 | :--- | :--- |
 | **Word Size** | 8-bit |
@@ -24,6 +23,12 @@ And the bird falls at a constant rate!
 
 The code used to write the game can be found in the Assembly folder.          
 
-Currently trying to learn systemVerilog to convert this into real CPU
+Currently trying to learn SystemVerilog to convert this into real CPU
 
 **NOTE : THIS HAS NOTHING TO DO WITH CAL POLY'S RATCPU**
+
+## Credits & Acknowledgments
+| Topic | Credit |  
+| :--- | :--- |  
+| OPENGL Setup | https://www.youtube.com/watch?v=XfjmLP_PSsQ&list=PL4QbKfRYvHvSJSVgHawYIvcIA0CcgnMzw |
+| Learning | ORE Discord Server |
