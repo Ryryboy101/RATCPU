@@ -27,6 +27,7 @@ ldi r4 7
 mlt r3 r4 r3 r4
 ldi r3 11
 add r4 r3 r3
+xor r3 r4 r3
 store r3 101
 
 
@@ -209,7 +210,7 @@ ldi r7 1
 io r7 4 write
 
 ;control speed here
-ldi r6 1000
+ldi r6 100
 .delay_loop
 ldi r7 1
 sub r6 r7 r6
