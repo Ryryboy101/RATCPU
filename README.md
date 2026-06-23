@@ -25,10 +25,12 @@ The code used to write the game can be found in the Assembly folder.
 
 Currently trying to learn SystemVerilog to convert this into real CPU
 
-**NOTE : THIS HAS NOTHING TO DO WITH CAL POLY'S RATCPU**
+
 
 ## Credits & Acknowledgments
 | Topic | Credit |  
 | :--- | :--- |  
 | OPENGL Setup | Dev Genie Academy OpenGL tutorial : https://www.youtube.com/watch?v=XfjmLP_PSsQ&list=PL4QbKfRYvHvSJSVgHawYIvcIA0CcgnMzw |
 | Learning | ORE Discord Server : http://openredstone.org/discord |
+
+**NOTE : THIS HAS NOTHING TO DO WITH CAL POLY'S RATCPU**
